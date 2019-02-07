@@ -1,0 +1,49 @@
+tarteocitron.settings:
+  type: mapping
+  label: 'Tarte O Citron Settings'
+  mapping:
+    tarteocitron_adblocker:
+      type: boolean
+      label: 'adblocker'
+    tarteocitron_hashtag:
+      type: string
+      label: 'hashtag'
+    tarteocitron_cookiename:
+      type: string
+      label: 'cookieName'
+    tarteocitron_highprivacy:
+      type: boolean
+      label: 'highPrivacy'
+    tarteocitron_orientation:
+      type: string
+      label: 'orientation'
+    tarteocitron_removecredit:
+      type: boolean
+      label: 'removeCredit'
+    tarteocitron_showalertsmall:
+      type: boolean
+      label: 'showAlertSmall'
+    tarteocitron_cookieslist:
+      type: boolean
+      label: 'cookieslist'
+    tarteocitron_handlebrowserdntrequest:
+      type: boolean
+      label: 'handleBrowserDNTRequest'
+    tarteocitron_acceptallcta:
+      type: boolean
+      label: 'AcceptAllCta'
+    tarteocitron_moreinfolink:
+      type: boolean
+      label: 'moreInfoLink'
+    tarteocitron_privacyurl:
+      type: string
+      label: 'privacyUrl'
+    tarteocitron_useexternalcss:
+      type: boolean
+      label: 'useExternalCss'
+    tarteocitron_customtext:
+      type: string
+      label: 'CustomText'
+    tarteocitron_services:
+      type: string
+      label: 'Services'

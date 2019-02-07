@@ -1,0 +1,27 @@
+libraries.tarteaucitron:
+  remote: https://github.com/AmauriC/tarteaucitron.js
+  version: VERSION
+  license:
+    name: MIT
+    url: https://github.com/AmauriC/tarteaucitron.js/blob/master/LICENSE
+    gpl-compatible: true
+  cdn:
+    /libraries/tarteaucitron.js/: https://raw.githubusercontent.com/AmauriC/tarteaucitron.js/master/
+  js:
+    /libraries/tarteaucitron.js/tarteaucitron.js: {}
+
+tarteocitron.services:
+  version: VERSION
+  js:
+    js/tarteocitron.services.js: {}
+  dependencies:
+    - tarteocitron/libraries.tarteaucitron
+
+tarteocitron.init:
+  version: VERSION
+  js:
+    js/tarteocitron.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+    - tarteocitron/tarteocitron.service

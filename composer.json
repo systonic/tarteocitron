@@ -1,0 +1,33 @@
+{
+    "name": "systonic/tarteocitron",
+    "description": "Add the tarteaucitron.js service.",
+    "type": "drupal-module",
+    "keywords": ["php", "drupal", "seo", "rgpd", "gdpr"],
+    "homepage": "https://github.com/systonic/tarteocitron",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Sylvain Larras"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "amauric/tarteaucitron",
+                "version": "1.2.0",
+                "dist": {
+                    "url": "https://github.com/AmauriC/tarteaucitron.js/archive/master.zip",
+                    "type": "zip"
+                },
+                "type": "drupal-library"
+            }
+        }
+    ],
+    "require": {
+        "drupal/core": "~8",
+        "amauric/tarteaucitron": "^1"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

@@ -1,0 +1,37 @@
+<?php
+/**
+ * @file
+ * Add the tarteaucitron.js service.
+ */
+
+/**
+ * Implements hook_page_attachments().
+ */
+function tarteocitron_page_attachments(&$attachments) {
+  $config = \Drupal::config('tarteocitron.settings');
+
+  $settings['config'] = [
+    'cdn' => '/libraries/tarteaucitron.js/',
+    'language' => \Drupal::languageManager()->getCurrentLanguage()->getId(),
+    'adblocker' => $config->get('tarteocitron_adblocker'),
+    'hashtag' => $config->get('tarteocitron_hashtag'),
+    'cookiename' => $config->get('tarteocitron_cookiename'),
+    'highprivacy' => $config->get('tarteocitron_highprivacy'),
+    'orientation' => $config->get('tarteocitron_orientation'),
+    'removecredit' => $config->get('tarteocitron_removecredit'),
+    'showalertsmall' => $config->get('tarteocitron_showalertsmall'),
+    'cookieslist' => $config->get('tarteocitron_cookieslist'),
+    'handlebrowserdntrequest' => $config->get('tarteocitron_handlebrowserdntrequest'),
+    'acceptallcta' => $config->get('tarteocitron_acceptallcta'),
+    'moreinfolink' => $config->get('tarteocitron_moreinfolink'),
+    'privacyurl' => $config->get('tarteocitron_privacyurl'),
+    'useexternalcss' => $config->get('tarteocitron_useexternalcss'),
+    'custom_text' => $config->get('tarteocitron_customtext'),
+    'services' => $config->get('tarteocitron_services'),
+  ];
+
+  $attachments['#attached']['library'][] = 'tarteocitron/libraries.tarteaucitron';
+  $attachments['#attached']['library'][] = 'tarteocitron/tarteocitron.services';
+  $attachments['#attached']['library'][] = 'tarteocitron/tarteocitron.init';
+  $attachments['#attached']['drupalSettings']['tarteocitron'] = $settings;
+}

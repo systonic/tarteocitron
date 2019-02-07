@@ -1,0 +1,5 @@
+tarteocitron.config:
+  title: 'Tarte O Citron'
+  route_name: tarteocitron.config
+  parent: system.admin_config_system
+  description: 'Configure Tarte O Citron module.'
