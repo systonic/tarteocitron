@@ -10,23 +10,8 @@
             "name": "Sylvain Larras"
         }
     ],
-    "repositories": [
-        {
-            "type": "package",
-            "package": {
-                "name": "amauric/tarteaucitron",
-                "version": "1.2.0",
-                "dist": {
-                    "url": "https://github.com/AmauriC/tarteaucitron.js/archive/master.zip",
-                    "type": "zip"
-                },
-                "type": "drupal-library"
-            }
-        }
-    ],
     "require": {
-        "drupal/core": "~8",
-        "amauric/tarteaucitron": "~1"
+        "drupal/core": "~8"
     },
     "minimum-stability": "dev",
     "prefer-stable": true
