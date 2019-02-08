@@ -8,6 +8,10 @@
  * Implements hook_page_attachments().
  */
 function tarteocitron_page_attachments(&$attachments) {
+  if (\Drupal::service('router.admin_context')->isAdminRoute()) {
+    return;
+  }
+
   $config = \Drupal::config('tarteocitron.settings');
 
   $settings['config'] = [

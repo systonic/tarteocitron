@@ -23,5 +23,6 @@ tarteocitron.init:
     js/tarteocitron.js: {}
   dependencies:
     - core/jquery
+    - core/drupal
     - core/drupalSettings
     - tarteocitron/tarteocitron.service
