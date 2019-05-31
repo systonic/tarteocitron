@@ -1,0 +1,38 @@
+{
+    "name": "systonic/tarteocitron",
+    "description": "Add the tarteaucitron.js service.",
+    "type": "drupal-module",
+    "keywords": ["php", "drupal", "seo", "rgpd", "gdpr"],
+    "homepage": "https://github.com/systonic/tarteocitron",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Sylvain Larras"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": {
+        "enyo.dropzone": {
+            "type": "package",
+            "package": {
+                "name": "enyo/dropzone",
+                "version": "5.5.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "dropzone"
+                },
+                "dist": {
+                    "url": "https://gitlab.com/meno/dropzone/builds/artifacts/master/download?job=release",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        }
+    },
+    "require": {
+        "enyo/dropzone": "5.5.0"
+    }
+}
