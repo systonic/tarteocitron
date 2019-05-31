@@ -13,17 +13,17 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "repositories": {
-        "enyo.dropzone": {
+        "amauric.tarteaucitron": {
             "type": "package",
             "package": {
-                "name": "enyo/dropzone",
-                "version": "5.5.0",
+                "name": "amauric/tarteaucitron",
+                "version": "1.2.0",
                 "type": "drupal-library",
                 "extra": {
-                    "installer-name": "dropzone"
+                    "installer-name": "tarteaucitron.js"
                 },
                 "dist": {
-                    "url": "https://gitlab.com/meno/dropzone/builds/artifacts/master/download?job=release",
+                    "url": "https://github.com/AmauriC/tarteaucitron.js/archive/master.zip",
                     "type": "zip"
                 },
                 "require": {
@@ -33,6 +33,6 @@
         }
     },
     "require": {
-        "enyo/dropzone": "5.5.0"
+        "amauric/tarteaucitron": "1.2.0"
     }
 }
