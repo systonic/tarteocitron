@@ -4,7 +4,7 @@
 
       tarteaucitron.cdn = drupalSettings.tarteocitron.config.cdn;
       tarteaucitronForceLanguage = drupalSettings.tarteocitron.config.language;
-      tarteaucitronCustomText = drupalSettings.tarteocitron.config.custom_text;
+      tarteaucitronCustomText = JSON.parse(drupalSettings.tarteocitron.config.custom_text);
 
       tarteaucitron.init({
         "adblocker": drupalSettings.tarteocitron.config.adblocker,

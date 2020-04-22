@@ -1,5 +1,5 @@
 tarteocitron.settings:
-  type: mapping
+  type: config_object
   label: 'Tarte O Citron Settings'
   mapping:
     tarteocitron_adblocker:
@@ -36,14 +36,14 @@ tarteocitron.settings:
       type: boolean
       label: 'moreInfoLink'
     tarteocitron_privacyurl:
-      type: string
+      type: text
       label: 'privacyUrl'
     tarteocitron_useexternalcss:
       type: boolean
       label: 'useExternalCss'
     tarteocitron_customtext:
-      type: string
+      type: text
       label: 'CustomText'
     tarteocitron_services:
-      type: string
+      type: text
       label: 'Services'

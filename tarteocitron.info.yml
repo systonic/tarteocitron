@@ -3,4 +3,9 @@ description: 'Add the tarteaucitron.js service.'
 core: 8.x
 type: module
 package: Statistics
+
 configure: tarteocitron.config
+
+dependencies:
+  - drupal:locale
+  - config_translation

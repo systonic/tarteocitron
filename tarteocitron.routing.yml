@@ -1,5 +1,5 @@
 tarteocitron.config:
-  path: 'admin/config/system/tarteocitron'
+  path: '/admin/config/system/tarteocitron'
   defaults:
     _title: 'Tarte O Citron'
     _form: \Drupal\tarteocitron\Form\TarteOCitronAdminForm

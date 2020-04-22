@@ -11,5 +11,6 @@ tarteocitron_acceptallcta: false
 tarteocitron_moreinfolink: true
 tarteocitron_privacyurl: ''
 tarteocitron_useexternalcss: false
-tarteocitron_customtext: ''
+tarteocitron_customtext: '{}'
 tarteocitron_services: ''
+langcode: en
