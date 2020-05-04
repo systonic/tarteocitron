@@ -15,7 +15,7 @@ function tarteocitron_page_attachments(&$attachments) {
   $config = \Drupal::config('tarteocitron.settings');
 
   $settings['config'] = [
-    'cdn' => '/libraries/tarteaucitron.js/',
+    'cdn' => '/libraries/tarteaucitronjs/',
     'language' => \Drupal::languageManager()->getCurrentLanguage()->getId(),
     'adblocker' => $config->get('tarteocitron_adblocker'),
     'hashtag' => $config->get('tarteocitron_hashtag'),
