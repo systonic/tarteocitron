@@ -10,6 +10,12 @@
             "name": "Sylvain Larras"
         }
     ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
     "require": {
         "drupal/core": "~8",
         "npm-asset/tarteaucitronjs": "^1.4"
