@@ -132,6 +132,13 @@ class TarteOCitronAdminForm extends ConfigFormBase {
       '#default_value' => $config->get('tarteocitron_useexternalcss'),
     ];
 
+    $form['options']['tarteocitron_showicon'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('showIcon'),
+      //'#description' => $this->t(''),
+      '#default_value' => $config->get('tarteocitron_showicon'),
+    ];
+
     $form['tarteocitron_customtext'] = [
       '#type' => 'textarea',
       '#title' => $this->t('CustomText'),

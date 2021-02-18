@@ -41,6 +41,9 @@ tarteocitron.settings:
     tarteocitron_useexternalcss:
       type: boolean
       label: 'useExternalCss'
+    tarteocitron_showicon:
+      type: boolean
+      label: 'showIcon'
     tarteocitron_customtext:
       type: text
       label: 'CustomText'

@@ -19,7 +19,8 @@
         "AcceptAllCta": drupalSettings.tarteocitron.config.acceptallcta,
         "moreInfoLink": drupalSettings.tarteocitron.config.moreinfolink,
         "privacyUrl": drupalSettings.tarteocitron.config.privacyurl,
-        "useExternalCss": drupalSettings.tarteocitron.config.useexternalcss
+        "useExternalCss": drupalSettings.tarteocitron.config.useexternalcss,
+        "showIcon": drupalSettings.tarteocitron.config.showicon
       });
 
       eval(drupalSettings.tarteocitron.config.services);

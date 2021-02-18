@@ -30,6 +30,7 @@ function tarteocitron_page_attachments(&$attachments) {
     'moreinfolink' => $config->get('tarteocitron_moreinfolink'),
     'privacyurl' => $config->get('tarteocitron_privacyurl'),
     'useexternalcss' => $config->get('tarteocitron_useexternalcss'),
+    'showicon' => $config->get('tarteocitron_showicon'),
     'custom_text' => $config->get('tarteocitron_customtext'),
     'services' => $config->get('tarteocitron_services'),
   ];
