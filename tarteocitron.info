@@ -1,0 +1,8 @@
+name = Tarte O Citron
+description = Add the tarteaucitron.js service.
+core = 7.x
+package = Statistics
+
+dependencies[] = libraries
+
+configure = admin/config/system/tarteocitron

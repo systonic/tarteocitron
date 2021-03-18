@@ -6,8 +6,7 @@ Add the tarteaucitron.js service.
 
 ## Installation
 
-To install this module, `composer require` it, or place it in your modules
-folder and enable it on the modules page.
+In the same way as any other module.
 
 
 ## Configuration

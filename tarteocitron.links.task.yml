@@ -1,4 +1,0 @@
-tarteocitron.settings_tab:
-  route_name: tarteocitron.config
-  title: 'Settings'
-  base_route: tarteocitron.config

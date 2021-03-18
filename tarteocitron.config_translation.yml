@@ -1,5 +1,0 @@
-tarteocitron.config:
-  title: 'Tarte O Citron configuration'
-  base_route_name: tarteocitron.config
-  names:
-    - 'tarteocitron.settings'

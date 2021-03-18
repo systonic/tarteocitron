@@ -1,0 +1,83 @@
+<?php
+/**
+ * @file
+ * .
+ */
+
+/**
+ * Implements hook_install().
+ */
+function tarteocitron_install() {
+  // Do nothing for now
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function tarteocitron_uninstall() {
+  variable_del('tarteocitron_privacyurl');
+  variable_del('tarteocitron_hashtag');
+  variable_del('tarteocitron_cookiename');
+  variable_del('tarteocitron_orientation');
+  variable_del('tarteocitron_showalertsmall');
+  variable_del('tarteocitron_cookieslist');
+  variable_del('tarteocitron_closepopup');
+  variable_del('tarteocitron_showicon');
+  variable_del('tarteocitron_iconposition');
+  variable_del('tarteocitron_adblocker');
+  variable_del('tarteocitron_denyallcta');
+  variable_del('tarteocitron_acceptallcta');
+  variable_del('tarteocitron_highprivacy');
+  variable_del('tarteocitron_handlebrowserdntrequest');
+  variable_del('tarteocitron_removecredit');
+  variable_del('tarteocitron_moreinfolink');
+  variable_del('tarteocitron_useexternalcss');
+  variable_del('tarteocitron_useexternaljs');
+  variable_del('tarteocitron_readmorelink');
+  variable_del('tarteocitron_mandatory');
+  variable_del('tarteocitron_customtext');
+  variable_del('tarteocitron_services');
+}
+
+/**
+ * Implements hook_requirements().
+ */
+function tarteocitron_requirements($phase) {
+  $requirements = array();
+  // Ensure translations don't break at install time
+  $t = get_t();
+
+  // Check to see if the library is available
+  if ($phase == 'runtime') {
+    $library = libraries_detect('tarteaucitron.js');
+
+    if ($library['installed']) {
+      $version = explode('.', $library['version']);
+
+      if ($version[0] >= TARTEOCITRON_COMPATIBLE_MAJOR_VERSION) {
+        $requirements['tarteaucitron.js'] = array(
+          'value' => $library['version'],
+          'severity' => REQUIREMENT_OK,
+        );
+      }
+      else {
+        $requirements['tarteaucitron.js'] = array(
+          'value' => $library['version'],
+          'description' => $t('Incompatible version detected. The tarteaucitron.js library version must be upper than %version branch.', array('%version' => TARTEOCITRON_COMPATIBLE_MAJOR_VERSION)),
+          'severity' => REQUIREMENT_WARNING,
+        );
+      }
+    }
+    else {
+      $requirements['tarteaucitron.js'] = array(
+        'value' => $t('tarteaucitron.js library not found.'),
+        'description' => $t('The tarteaucitron.js library could not be detected.'),
+        'severity' => REQUIREMENT_ERROR,
+      );
+    }
+
+    $requirements['tarteaucitron.js']['title'] = $t('tarteaucitron.js');
+  }
+
+  return $requirements;
+}

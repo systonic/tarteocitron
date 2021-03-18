@@ -4,39 +4,153 @@
  * Add the tarteaucitron.js service.
  */
 
+define("TARTEOCITRON_COMPATIBLE_MAJOR_VERSION", '2018');
+
 /**
- * Implements hook_page_attachments().
+ * Implements hook_libraries_info().
  */
-function tarteocitron_page_attachments(&$attachments) {
-  if (\Drupal::service('router.admin_context')->isAdminRoute()) {
-    return;
+function tarteocitron_libraries_info() {
+  $libraries['tarteaucitron.js'] = array(
+    'name' => 'Tarteaucitron.js',
+    'vendor url' => 'https://opt-out.ferank.eu/fr/',
+    'download url' => 'https://github.com/AmauriC/tarteaucitron.js',
+    'version arguments' => array(
+      'file' => 'tarteaucitron.js',
+      'pattern' => '/"version": (\d{4}).*/',
+    ),
+    'files' => array(
+      'js' => array(
+        'tarteaucitron.js',
+      ),
+    ),
+  );
+
+  return $libraries;
+}
+
+// For the v1.x libraries module.
+if (!function_exists('libraries_detect')) {
+  function libraries_detect($name) {
+    $libraries_info = tarteocitron_libraries_info();
+    $libraries_info[$name]['library path'] = libraries_get_path($name);
+    $libraries_info[$name]['installed'] = TRUE;
+    $libraries_info[$name]['version'] = TARTEOCITRON_COMPATIBLE_MAJOR_VERSION; //TODO: get the real version
+    return $libraries_info[$name];
   }
+}
 
-  $config = \Drupal::config('tarteocitron.settings');
+/**
+ * Implements hook_library().
+ */
+function tarteocitron_library() {
+  $module_path = drupal_get_path('module', 'tarteocitron');
+  $library = libraries_detect('tarteaucitron.js');
 
-  $settings['config'] = [
-    'cdn' => '/libraries/tarteaucitron.js/',
-    'language' => \Drupal::languageManager()->getCurrentLanguage()->getId(),
-    'adblocker' => $config->get('tarteocitron_adblocker'),
-    'hashtag' => $config->get('tarteocitron_hashtag'),
-    'cookiename' => $config->get('tarteocitron_cookiename'),
-    'highprivacy' => $config->get('tarteocitron_highprivacy'),
-    'orientation' => $config->get('tarteocitron_orientation'),
-    'removecredit' => $config->get('tarteocitron_removecredit'),
-    'showalertsmall' => $config->get('tarteocitron_showalertsmall'),
-    'cookieslist' => $config->get('tarteocitron_cookieslist'),
-    'handlebrowserdntrequest' => $config->get('tarteocitron_handlebrowserdntrequest'),
-    'acceptallcta' => $config->get('tarteocitron_acceptallcta'),
-    'moreinfolink' => $config->get('tarteocitron_moreinfolink'),
-    'privacyurl' => $config->get('tarteocitron_privacyurl'),
-    'useexternalcss' => $config->get('tarteocitron_useexternalcss'),
-    'showicon' => $config->get('tarteocitron_showicon'),
-    'custom_text' => $config->get('tarteocitron_customtext'),
-    'services' => $config->get('tarteocitron_services'),
-  ];
+  $libraries['tarteaucitron.js'] = array(
+    'title' => $library['name'],
+    'website' => $library['vendor url'],
+    'version' => $library['version'],
+    'js' => array(
+      $library['library path'] . '/' . key($library['files']['js']) => array(
+        'scope' => 'footer',
+      ),
+    ),
+  );
+  return $libraries;
+}
 
-  $attachments['#attached']['library'][] = 'tarteocitron/libraries.tarteaucitron';
-  $attachments['#attached']['library'][] = 'tarteocitron/tarteocitron.services';
-  $attachments['#attached']['library'][] = 'tarteocitron/tarteocitron.init';
-  $attachments['#attached']['drupalSettings']['tarteocitron'] = $settings;
+/**
+ * Implements hook_permission().
+ */
+function tarteocitron_permission() {
+  return array(
+    'administer tarteocitron' => array(
+      'title' => t('Administer tarteaucitron.js community edition'),
+      'description' => t('Perform administration tasks for tarteaucitron.js.'),
+      'restrict access' => TRUE,
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function tarteocitron_menu() {
+  $items = array();
+  $items['admin/config/system/tarteocitron'] = array(
+    'title' => 'tarteaucitron.js',
+    'description' => 'Add services on site . ',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('tarteocitron_admin_form'),
+    'access arguments' => array('administer tarteocitron'),
+    'file' => 'tarteocitron.admin.inc',
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_variable_info().
+ */
+function tarteocitron_variable_info($options) {
+  $variables['tarteocitron_customtext'] = array(
+    'title' => t('CustomText'),
+    'localize' => TRUE,
+  );
+
+  return $variables;
+}
+
+/**
+ * Build the footer.
+ */
+function tarteocitron_page_build(&$page) {
+  if (!path_is_admin(current_path())) {
+    _tarteocitron_output_js_code();
+  }
+}
+
+/**
+ * Put the Javascript to the footer.
+ */
+function _tarteocitron_output_js_code() {
+  global $base_url, $language;
+  $lib_path = libraries_get_path('tarteaucitron.js');
+
+  drupal_add_js('
+    var tarteaucitronForceCDN = "' . $base_url . '/' . $lib_path . '/",
+        tarteaucitronForceLanguage = "' . $language->language . '",
+        tarteaucitronCustomText = {' . variable_get('tarteocitron_customtext', '') . '};
+    ', array('group' => JS_THEME, 'scope' => 'footer', 'type' => 'inline'));
+
+  drupal_add_js($lib_path . '/tarteaucitron.js', array('group' => JS_THEME, 'scope' => 'footer'));
+
+  drupal_add_js(drupal_get_path('module', 'tarteocitron') . '/tarteocitron.services.js', array('group' => JS_THEME, 'scope' => 'footer'));
+
+  drupal_add_js('
+    tarteaucitron.init({
+     "privacyUrl": "' . variable_get('tarteocitron_privacyurl', '') . '",
+     "hashtag": "' . variable_get('tarteocitron_hashtag', '#tarteaucitron') . '",
+     "cookieName": "' . variable_get('tarteocitron_cookiename', 'tarteaucitron') . '",
+     "orientation": "' . variable_get('tarteocitron_orientation', 'bottom') . '",
+     "showAlertSmall": ' . (variable_get('tarteocitron_showalertsmall', 0) ? 'true' : 'false') . ',
+     "cookieslist": ' . (variable_get('tarteocitron_cookieslist', 0) ? 'true' : 'false') . ',
+     "closePopup": ' . (variable_get('tarteocitron_closepopup', 0) ? 'true' : 'false') . ',
+     "showIcon": ' . (variable_get('tarteocitron_showicon', 0) ? 'true' : 'false') . ',
+     "iconPosition": "' . variable_get('tarteocitron_iconposition', 'BottomRight') . '",
+     "adblocker": ' . (variable_get('tarteocitron_adblocker', 0) ? 'true' : 'false') . ',
+     "DenyAllCta": ' . (variable_get('tarteocitron_denyallcta', 1) ? 'true' : 'false') . ',
+     "AcceptAllCta": ' . (variable_get('tarteocitron_acceptallcta', 1) ? 'true' : 'false') . ',
+     "highPrivacy": ' . (variable_get('tarteocitron_highprivacy', 1) ? 'true' : 'false') . ',
+     "handleBrowserDNTRequest": ' . (variable_get('tarteocitron_handlebrowserdntrequest', 0) ? 'true' : 'false') . ',
+     "removeCredit": ' . (variable_get('tarteocitron_removecredit', 0) ? 'true' : 'false') . ',
+     "moreInfoLink": ' . (variable_get('tarteocitron_moreinfolink', 1) ? 'true' : 'false') . ',
+     "useExternalCss": ' . (variable_get('tarteocitron_useexternalcss', 0) ? 'true' : 'false') . ',
+     "useExternalJs": ' . (variable_get('tarteocitron_useexternaljs', 0) ? 'true' : 'false') . ',
+     "readmoreLink": "' . variable_get('tarteocitron_readmoreLink', '') . '",
+     "mandatory": ' . (variable_get('tarteocitron_mandatory', 1) ? 'true' : 'false') . ',
+    });', array('group' => JS_THEME, 'scope' => 'footer', 'type' => 'inline'));
+
+  if ($services = variable_get('tarteocitron_services', FALSE)) {
+    drupal_add_js($services, array('group' => JS_THEME, 'scope' => 'footer', 'type' => 'inline'));
+  }
 }
