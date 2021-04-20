@@ -153,4 +153,10 @@ function _tarteocitron_output_js_code() {
   if ($services = variable_get('tarteocitron_services', FALSE)) {
     drupal_add_js($services, array('group' => JS_THEME, 'scope' => 'footer', 'type' => 'inline'));
   }
+
+  drupal_add_js('
+    document.querySelector(".tac_cookies_btn").addEventListener("click", e => {
+      e.preventDefault();
+      tarteaucitron.userInterface.openPanel();
+    });', array('group' => JS_THEME, 'scope' => 'footer', 'type' => 'inline'));
 }
