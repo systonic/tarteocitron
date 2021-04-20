@@ -7,23 +7,34 @@
       tarteaucitronCustomText = JSON.parse(drupalSettings.tarteocitron.config.custom_text);
 
       tarteaucitron.init({
-        "adblocker": drupalSettings.tarteocitron.config.adblocker,
+        "privacyUrl": drupalSettings.tarteocitron.config.privacyurl,
         "hashtag": drupalSettings.tarteocitron.config.hashtag,
         "cookieName": drupalSettings.tarteocitron.config.cookiename,
-        "highPrivacy": drupalSettings.tarteocitron.config.highprivacy,
         "orientation": drupalSettings.tarteocitron.config.orientation,
-        "removeCredit": drupalSettings.tarteocitron.config.removecredit,
         "showAlertSmall": drupalSettings.tarteocitron.config.showalertsmall,
         "cookieslist": drupalSettings.tarteocitron.config.cookieslist,
-        "handleBrowserDNTRequest": drupalSettings.tarteocitron.config.handlebrowserdntrequest,
+        "closePopup": drupalSettings.tarteocitron.config.closepopup,
+        "showIcon": drupalSettings.tarteocitron.config.showicon,
+        "iconPosition": drupalSettings.tarteocitron.config.iconposition,
+        "adblocker": drupalSettings.tarteocitron.config.adblocker,
+        "DenyAllCta": drupalSettings.tarteocitron.config.denyallcta,
         "AcceptAllCta": drupalSettings.tarteocitron.config.acceptallcta,
+        "highPrivacy": drupalSettings.tarteocitron.config.highprivacy,
+        "handleBrowserDNTRequest": drupalSettings.tarteocitron.config.handlebrowserdntrequest,
+        "removeCredit": drupalSettings.tarteocitron.config.removecredit,
         "moreInfoLink": drupalSettings.tarteocitron.config.moreinfolink,
-        "privacyUrl": drupalSettings.tarteocitron.config.privacyurl,
         "useExternalCss": drupalSettings.tarteocitron.config.useexternalcss,
-        "showIcon": drupalSettings.tarteocitron.config.showicon
+        "useExternalJs": drupalSettings.tarteocitron.config.useexternaljs,
+        "readmoreLink": drupalSettings.tarteocitron.config.readmorelink,
+        "mandatory": drupalSettings.tarteocitron.config.mandatory
       });
 
       eval(drupalSettings.tarteocitron.config.services);
+
+      $(".tac_cookies_btn").click(e => {
+        e.preventDefault();
+        tarteaucitron.userInterface.openPanel();
+      });
 
     }
   };

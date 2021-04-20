@@ -2,48 +2,66 @@ tarteocitron.settings:
   type: config_object
   label: 'Tarte O Citron Settings'
   mapping:
-    tarteocitron_adblocker:
-      type: boolean
-      label: 'adblocker'
+    tarteocitron_privacyurl:
+      type: text
+      label: 'privacyUrl'
     tarteocitron_hashtag:
       type: string
       label: 'hashtag'
     tarteocitron_cookiename:
       type: string
       label: 'cookieName'
-    tarteocitron_highprivacy:
-      type: boolean
-      label: 'highPrivacy'
     tarteocitron_orientation:
       type: string
       label: 'orientation'
-    tarteocitron_removecredit:
-      type: boolean
-      label: 'removeCredit'
     tarteocitron_showalertsmall:
       type: boolean
       label: 'showAlertSmall'
     tarteocitron_cookieslist:
       type: boolean
       label: 'cookieslist'
-    tarteocitron_handlebrowserdntrequest:
+    tarteocitron_closepopup:
       type: boolean
-      label: 'handleBrowserDNTRequest'
-    tarteocitron_acceptallcta:
-      type: boolean
-      label: 'AcceptAllCta'
-    tarteocitron_moreinfolink:
-      type: boolean
-      label: 'moreInfoLink'
-    tarteocitron_privacyurl:
-      type: text
-      label: 'privacyUrl'
-    tarteocitron_useexternalcss:
-      type: boolean
-      label: 'useExternalCss'
+      label: 'closePopup'
     tarteocitron_showicon:
       type: boolean
       label: 'showIcon'
+    tarteocitron_iconposition:
+      type: string
+      label: 'iconPosition'
+    tarteocitron_adblocker:
+      type: boolean
+      label: 'adblocker'
+    tarteocitron_denyallcta:
+      type: boolean
+      label: 'DenyAllCta'
+    tarteocitron_acceptallcta:
+      type: boolean
+      label: 'AcceptAllCta'
+    tarteocitron_highprivacy:
+      type: boolean
+      label: 'highPrivacy'
+    tarteocitron_handlebrowserdntrequest:
+      type: boolean
+      label: 'handleBrowserDNTRequest'
+    tarteocitron_removecredit:
+      type: boolean
+      label: 'removeCredit'
+    tarteocitron_moreinfolink:
+      type: boolean
+      label: 'moreInfoLink'
+    tarteocitron_useexternalcss:
+      type: boolean
+      label: 'useExternalCss'
+    tarteocitron_useexternaljs:
+      type: boolean
+      label: 'useExternalJs'
+    tarteocitron_readmorelink:
+      type: text
+      label: 'readmoreLink'
+    tarteocitron_mandatory:
+      type: boolean
+      label: 'mandatory'
     tarteocitron_customtext:
       type: text
       label: 'CustomText'

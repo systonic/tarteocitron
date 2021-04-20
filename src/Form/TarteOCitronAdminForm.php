@@ -37,106 +37,155 @@ class TarteOCitronAdminForm extends ConfigFormBase {
       '#collapsed' => FALSE,
     ];
 
-    $form['options']['tarteocitron_adblocker'] = [
-      '#type' => 'checkbox',
-      '#title' => $this->t('adblocker'),
-      //'#description' => $this->t(''),
-      '#default_value' => $config->get('tarteocitron_adblocker'),
+    $form['options']['tarteocitron_privacyurl'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('privacyUrl'),
+      '#description' => $this->t('Privacy policy url'),
+      '#default_value' => $config->get('tarteocitron_privacyurl'),
     ];
 
     $form['options']['tarteocitron_hashtag'] = [
       '#type' => 'textfield',
       '#title' => $this->t('hashtag'),
-      //'#description' => $this->t(''),
+      '#description' => $this->t('Open the panel with this hashtag'),
       '#default_value' => $config->get('tarteocitron_hashtag'),
     ];
 
     $form['options']['tarteocitron_cookiename'] = [
       '#type' => 'textfield',
       '#title' => $this->t('cookieName'),
-      //'#description' => $this->t(''),
+      '#description' => $this->t('Cookie name'),
       '#default_value' => $config->get('tarteocitron_cookiename'),
-    ];
-
-    $form['options']['tarteocitron_highprivacy'] = [
-      '#type' => 'checkbox',
-      '#title' => $this->t('highPrivacy'),
-      //'#description' => $this->t(''),
-      '#default_value' => $config->get('tarteocitron_highprivacy'),
     ];
 
     $form['options']['tarteocitron_orientation'] = [
       '#type' => 'select',
       '#title' => $this->t('orientation'),
-      //'#description' => $this->t(''),
+      '#description' => $this->t('Banner position'),
       '#options' => [
         'top' => $this->t('Top'),
+        'middle' => $this->t('Middle'),
         'bottom' => $this->t('Bottom'),
       ],
       '#default_value' => $config->get('tarteocitron_orientation'),
     ];
 
-    $form['options']['tarteocitron_removecredit'] = [
-      '#type' => 'checkbox',
-      '#title' => $this->t('removeCredit'),
-      //'#description' => $this->t(''),
-      '#default_value' => $config->get('tarteocitron_removecredit'),
-    ];
-
     $form['options']['tarteocitron_showalertsmall'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('showAlertSmall'),
-      //'#description' => $this->t(''),
+      '#description' => $this->t('Show the small banner on bottom right'),
       '#default_value' => $config->get('tarteocitron_showalertsmall'),
     ];
 
     $form['options']['tarteocitron_cookieslist'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('cookieslist'),
-      //'#description' => $this->t(''),
+      '#description' => $this->t('Show the cookie list'),
       '#default_value' => $config->get('tarteocitron_cookieslist'),
     ];
 
-    $form['options']['tarteocitron_handlebrowserdntrequest'] = [
+    $form['options']['tarteocitron_closepopup'] = [
       '#type' => 'checkbox',
-      '#title' => $this->t('handleBrowserDNTRequest'),
-      //'#description' => $this->t(''),
-      '#default_value' => $config->get('tarteocitron_handlebrowserdntrequest'),
-    ];
-
-    $form['options']['tarteocitron_acceptallcta'] = [
-      '#type' => 'checkbox',
-      '#title' => $this->t('AcceptAllCta'),
-      //'#description' => $this->t(''),
-      '#default_value' => $config->get('tarteocitron_acceptallcta'),
-    ];
-
-    $form['options']['tarteocitron_moreinfolink'] = [
-      '#type' => 'checkbox',
-      '#title' => $this->t('moreInfoLink'),
-      //'#description' => $this->t(''),
-      '#default_value' => $config->get('tarteocitron_moreinfolink'),
-    ];
-
-    $form['options']['tarteocitron_privacyurl'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('privacyUrl'),
-      //'#description' => $this->t(''),
-      '#default_value' => $config->get('tarteocitron_privacyurl'),
-    ];
-
-    $form['options']['tarteocitron_useexternalcss'] = [
-      '#type' => 'checkbox',
-      '#title' => $this->t('useExternalCss'),
-      //'#description' => $this->t(''),
-      '#default_value' => $config->get('tarteocitron_useexternalcss'),
+      '#title' => $this->t('closePopup'),
+      '#description' => $this->t('Show a close X on the banner'),
+      '#default_value' => $config->get('tarteocitron_closepopup'),
     ];
 
     $form['options']['tarteocitron_showicon'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('showIcon'),
-      //'#description' => $this->t(''),
+      '#description' => $this->t('Show cookie icon to manage cookies'),
       '#default_value' => $config->get('tarteocitron_showicon'),
+    ];
+
+    $form['options']['tarteocitron_iconposition'] = [
+      '#type' => 'select',
+      '#title' => $this->t('iconPosition'),
+      '#description' => $this->t('Icon position'),
+      '#options' => [
+        'BottomRight' => $this->t('BottomRight'),
+        'BottomLeft' => $this->t('BottomLeft'),
+        'TopRight' => $this->t('TopRight'),
+        'TopLeft' => $this->t('TopLeft'),
+      ],
+      '#default_value' => $config->get('tarteocitron_iconposition'),
+    ];
+
+    $form['options']['tarteocitron_adblocker'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('adblocker'),
+      '#description' => $this->t('Show a Warning if an adblocker is detected'),
+      '#default_value' => $config->get('tarteocitron_adblocker'),
+    ];
+
+    $form['options']['tarteocitron_denyallcta'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('DenyAllCta'),
+      '#description' => $this->t('Show the deny all button'),
+      '#default_value' => $config->get('tarteocitron_denyallcta'),
+    ];
+
+    $form['options']['tarteocitron_acceptallcta'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('AcceptAllCta'),
+      '#description' => $this->t('Show the accept all button when highPrivacy on'),
+      '#default_value' => $config->get('tarteocitron_acceptallcta'),
+    ];
+
+    $form['options']['tarteocitron_highprivacy'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('highPrivacy'),
+      '#description' => $this->t('HIGHLY RECOMMANDED Disable auto consent'),
+      '#default_value' => $config->get('tarteocitron_highprivacy'),
+    ];
+
+    $form['options']['tarteocitron_handlebrowserdntrequest'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('handleBrowserDNTRequest'),
+      '#description' => $this->t('If Do Not Track == 1, disallow all'),
+      '#default_value' => $config->get('tarteocitron_handlebrowserdntrequest'),
+    ];
+
+    $form['options']['tarteocitron_removecredit'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('removeCredit'),
+      '#description' => $this->t('Remove credit link'),
+      '#default_value' => $config->get('tarteocitron_removecredit'),
+    ];
+
+    $form['options']['tarteocitron_moreinfolink'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('moreInfoLink'),
+      '#description' => $this->t('Show more info link'),
+      '#default_value' => $config->get('tarteocitron_moreinfolink'),
+    ];
+
+    $form['options']['tarteocitron_useexternalcss'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('useExternalCss'),
+      '#description' => $this->t('If false, the tarteaucitron.css file will be loaded'),
+      '#default_value' => $config->get('tarteocitron_useexternalcss'),
+    ];
+
+    $form['options']['tarteocitron_useexternaljs'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('useExternalJs'),
+      '#description' => $this->t('If false, the tarteaucitron.js file will be loaded'),
+      '#default_value' => $config->get('tarteocitron_useexternaljs'),
+    ];
+
+    $form['options']['tarteocitron_readmorelink'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('readmoreLink'),
+      '#description' => $this->t('Change the default readmore link'),
+      '#default_value' => $config->get('tarteocitron_readmorelink'),
+    ];
+
+    $form['options']['tarteocitron_mandatory'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('mandatory'),
+      '#description' => $this->t('Show a message about mandatory cookies'),
+      '#default_value' => $config->get('tarteocitron_mandatory'),
     ];
 
     $form['tarteocitron_customtext'] = [
