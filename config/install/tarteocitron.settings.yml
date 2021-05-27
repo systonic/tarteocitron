@@ -2,6 +2,7 @@ tarteocitron_privacyurl: ''
 tarteocitron_hashtag: '#tarteaucitron'
 tarteocitron_cookiename: 'tarteaucitron'
 tarteocitron_orientation: 'bottom'
+tarteocitron_groupservices: false
 tarteocitron_showalertsmall: false
 tarteocitron_cookieslist: false
 tarteocitron_closepopup: false
@@ -12,10 +13,11 @@ tarteocitron_denyallcta: true
 tarteocitron_acceptallcta: true
 tarteocitron_highprivacy: true
 tarteocitron_handlebrowserdntrequest: false
-tarteocitron_removecredit: false
-tarteocitron_moreinfolink: true
+tarteocitron_removecredit: true
+tarteocitron_moreinfolink: false
 tarteocitron_useexternalcss: false
 tarteocitron_useexternaljs: false
+tarteocitron_bodyposition: 'bottom'
 tarteocitron_readmorelink: ''
 tarteocitron_mandatory: true
 tarteocitron_customtext: '{}'

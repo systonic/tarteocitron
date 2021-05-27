@@ -14,6 +14,9 @@ tarteocitron.settings:
     tarteocitron_orientation:
       type: string
       label: 'orientation'
+    tarteocitron_groupservices:
+      type: boolean
+      label: 'groupServices'
     tarteocitron_showalertsmall:
       type: boolean
       label: 'showAlertSmall'
@@ -56,6 +59,9 @@ tarteocitron.settings:
     tarteocitron_useexternaljs:
       type: boolean
       label: 'useExternalJs'
+    tarteocitron_bodyposition:
+      type: string
+      label: 'bodyPosition'
     tarteocitron_readmorelink:
       type: text
       label: 'readmoreLink'

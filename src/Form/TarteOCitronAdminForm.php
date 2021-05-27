@@ -70,6 +70,13 @@ class TarteOCitronAdminForm extends ConfigFormBase {
       '#default_value' => $config->get('tarteocitron_orientation'),
     ];
 
+    $form['options']['tarteocitron_groupservices'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('groupServices'),
+      '#description' => $this->t('Group services by category'),
+      '#default_value' => $config->get('tarteocitron_groupservices'),
+    ];
+
     $form['options']['tarteocitron_showalertsmall'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('showAlertSmall'),
@@ -172,6 +179,17 @@ class TarteOCitronAdminForm extends ConfigFormBase {
       '#title' => $this->t('useExternalJs'),
       '#description' => $this->t('If false, the tarteaucitron.js file will be loaded'),
       '#default_value' => $config->get('tarteocitron_useexternaljs'),
+    ];
+
+    $form['options']['tarteocitron_bodyposition'] = [
+      '#type' => 'select',
+      '#title' => $this->t('bodyPosition'),
+      '#description' => $this->t('Where append the wrapper to the body'),
+      '#options' => [
+        'top' => $this->t('Top'),
+        'bottom' => $this->t('Bottom'),
+      ],
+      '#default_value' => $config->get('tarteocitron_bodyposition'),
     ];
 
     $form['options']['tarteocitron_readmorelink'] = [

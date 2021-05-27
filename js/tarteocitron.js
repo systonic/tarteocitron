@@ -11,6 +11,7 @@
         "hashtag": drupalSettings.tarteocitron.config.hashtag,
         "cookieName": drupalSettings.tarteocitron.config.cookiename,
         "orientation": drupalSettings.tarteocitron.config.orientation,
+        "groupServices": drupalSettings.tarteocitron.config.groupservices,
         "showAlertSmall": drupalSettings.tarteocitron.config.showalertsmall,
         "cookieslist": drupalSettings.tarteocitron.config.cookieslist,
         "closePopup": drupalSettings.tarteocitron.config.closepopup,
@@ -25,6 +26,7 @@
         "moreInfoLink": drupalSettings.tarteocitron.config.moreinfolink,
         "useExternalCss": drupalSettings.tarteocitron.config.useexternalcss,
         "useExternalJs": drupalSettings.tarteocitron.config.useexternaljs,
+        "bodyPosition": drupalSettings.tarteocitron.config.bodyposition,
         "readmoreLink": drupalSettings.tarteocitron.config.readmorelink,
         "mandatory": drupalSettings.tarteocitron.config.mandatory
       });
