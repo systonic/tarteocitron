@@ -1,8 +1,8 @@
 name: 'Tarte O Citron'
 description: 'Add the tarteaucitron.js service.'
-core: 8.x
 type: module
 package: Statistics
+core_version_requirement: ^8 || ^9
 
 configure: tarteocitron.config
 
