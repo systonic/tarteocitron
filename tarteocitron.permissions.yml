@@ -1,3 +1,4 @@
 administer tarteocitron:
   title: 'Configure Tarte O Citron'
   description: 'Allows users to configure Tarte O Citron settings.'
+  restrict access: true
