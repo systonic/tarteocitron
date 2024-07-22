@@ -8,10 +8,13 @@
 
       tarteaucitron.init({
         "privacyUrl": drupalSettings.tarteocitron.config.privacyurl,
+        "bodyPosition": drupalSettings.tarteocitron.config.bodyposition,
         "hashtag": drupalSettings.tarteocitron.config.hashtag,
         "cookieName": drupalSettings.tarteocitron.config.cookiename,
         "orientation": drupalSettings.tarteocitron.config.orientation,
         "groupServices": drupalSettings.tarteocitron.config.groupservices,
+        "showDetailsOnClick": drupalSettings.tarteocitron.config.showdetailsonclick,
+        "serviceDefaultState": drupalSettings.tarteocitron.config.servicedefaultstate,
         "showAlertSmall": drupalSettings.tarteocitron.config.showalertsmall,
         "cookieslist": drupalSettings.tarteocitron.config.cookieslist,
         "closePopup": drupalSettings.tarteocitron.config.closepopup,
@@ -21,14 +24,17 @@
         "DenyAllCta": drupalSettings.tarteocitron.config.denyallcta,
         "AcceptAllCta": drupalSettings.tarteocitron.config.acceptallcta,
         "highPrivacy": drupalSettings.tarteocitron.config.highprivacy,
+        "alwaysNeedConsent": drupalSettings.tarteocitron.config.alwaysneedconsent,
         "handleBrowserDNTRequest": drupalSettings.tarteocitron.config.handlebrowserdntrequest,
         "removeCredit": drupalSettings.tarteocitron.config.removecredit,
         "moreInfoLink": drupalSettings.tarteocitron.config.moreinfolink,
         "useExternalCss": drupalSettings.tarteocitron.config.useexternalcss,
         "useExternalJs": drupalSettings.tarteocitron.config.useexternaljs,
-        "bodyPosition": drupalSettings.tarteocitron.config.bodyposition,
         "readmoreLink": drupalSettings.tarteocitron.config.readmorelink,
-        "mandatory": drupalSettings.tarteocitron.config.mandatory
+        "mandatory": drupalSettings.tarteocitron.config.mandatory,
+        "mandatoryCta": drupalSettings.tarteocitron.config.mandatorycta,
+        "googleConsentMode": drupalSettings.tarteocitron.config.googleconsentmode,
+        "partnersList": drupalSettings.tarteocitron.config.partnerslist
       });
 
       eval(drupalSettings.tarteocitron.config.services);

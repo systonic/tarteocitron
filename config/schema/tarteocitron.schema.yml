@@ -5,6 +5,9 @@ tarteocitron.settings:
     tarteocitron_privacyurl:
       type: text
       label: 'privacyUrl'
+    tarteocitron_bodyposition:
+      type: string
+      label: 'bodyPosition'
     tarteocitron_hashtag:
       type: string
       label: 'hashtag'
@@ -17,6 +20,12 @@ tarteocitron.settings:
     tarteocitron_groupservices:
       type: boolean
       label: 'groupServices'
+    tarteocitron_showdetailsonclick:
+      type: boolean
+      label: 'showDetailsOnClick'
+    tarteocitron_servicedefaultstate:
+      type: string
+      label: 'serviceDefaultState'
     tarteocitron_showalertsmall:
       type: boolean
       label: 'showAlertSmall'
@@ -44,6 +53,9 @@ tarteocitron.settings:
     tarteocitron_highprivacy:
       type: boolean
       label: 'highPrivacy'
+    tarteocitron_alwaysneedconsent:
+      type: boolean
+      label: 'alwaysNeedConsent'
     tarteocitron_handlebrowserdntrequest:
       type: boolean
       label: 'handleBrowserDNTRequest'
@@ -59,15 +71,21 @@ tarteocitron.settings:
     tarteocitron_useexternaljs:
       type: boolean
       label: 'useExternalJs'
-    tarteocitron_bodyposition:
-      type: string
-      label: 'bodyPosition'
     tarteocitron_readmorelink:
       type: text
       label: 'readmoreLink'
     tarteocitron_mandatory:
       type: boolean
       label: 'mandatory'
+    tarteocitron_mandatorycta:
+      type: boolean
+      label: 'mandatoryCta'
+    tarteocitron_googleconsentmode:
+      type: boolean
+      label: 'googleConsentMode'
+    tarteocitron_partnerslist:
+      type: boolean
+      label: 'partnersList'
     tarteocitron_customtext:
       type: text
       label: 'CustomText'
