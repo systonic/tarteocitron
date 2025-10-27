@@ -2,90 +2,105 @@ tarteocitron.settings:
   type: config_object
   label: 'Tarte O Citron Settings'
   mapping:
-    tarteocitron_privacyurl:
-      type: text
-      label: 'privacyUrl'
-    tarteocitron_bodyposition:
-      type: string
-      label: 'bodyPosition'
+    tarteocitron_adblocker:
+      type: boolean
+      label: 'adblocker'
     tarteocitron_hashtag:
       type: string
       label: 'hashtag'
     tarteocitron_cookiename:
       type: string
       label: 'cookieName'
+    tarteocitron_highprivacy:
+      type: boolean
+      label: 'highPrivacy'
     tarteocitron_orientation:
       type: string
       label: 'orientation'
-    tarteocitron_groupservices:
-      type: boolean
-      label: 'groupServices'
-    tarteocitron_showdetailsonclick:
-      type: boolean
-      label: 'showDetailsOnClick'
-    tarteocitron_servicedefaultstate:
+    tarteocitron_bodyposition:
       type: string
-      label: 'serviceDefaultState'
+      label: 'bodyPosition'
+    tarteocitron_removecredit:
+      type: boolean
+      label: 'removeCredit'
     tarteocitron_showalertsmall:
       type: boolean
       label: 'showAlertSmall'
-    tarteocitron_cookieslist:
+    tarteocitron_showdetailsonclick:
       type: boolean
-      label: 'cookieslist'
-    tarteocitron_closepopup:
-      type: boolean
-      label: 'closePopup'
+      label: 'showDetailsOnClick'
     tarteocitron_showicon:
       type: boolean
       label: 'showIcon'
     tarteocitron_iconposition:
       type: string
       label: 'iconPosition'
-    tarteocitron_adblocker:
+    tarteocitron_cookieslist:
       type: boolean
-      label: 'adblocker'
+      label: 'cookieslist'
+    tarteocitron_cookieslistembed:
+      type: boolean
+      label: 'cookieslistEmbed'
+    tarteocitron_handlebrowserdntrequest:
+      type: boolean
+      label: 'handleBrowserDNTRequest'
     tarteocitron_denyallcta:
       type: boolean
       label: 'DenyAllCta'
     tarteocitron_acceptallcta:
       type: boolean
       label: 'AcceptAllCta'
-    tarteocitron_highprivacy:
-      type: boolean
-      label: 'highPrivacy'
-    tarteocitron_alwaysneedconsent:
-      type: boolean
-      label: 'alwaysNeedConsent'
-    tarteocitron_handlebrowserdntrequest:
-      type: boolean
-      label: 'handleBrowserDNTRequest'
-    tarteocitron_removecredit:
-      type: boolean
-      label: 'removeCredit'
     tarteocitron_moreinfolink:
       type: boolean
       label: 'moreInfoLink'
+    tarteocitron_privacyurl:
+      type: text
+      label: 'privacyUrl'
     tarteocitron_useexternalcss:
       type: boolean
       label: 'useExternalCss'
     tarteocitron_useexternaljs:
       type: boolean
       label: 'useExternalJs'
-    tarteocitron_readmorelink:
-      type: text
-      label: 'readmoreLink'
     tarteocitron_mandatory:
       type: boolean
       label: 'mandatory'
     tarteocitron_mandatorycta:
       type: boolean
       label: 'mandatoryCta'
+    tarteocitron_closepopup:
+      type: boolean
+      label: 'closePopup'
+    tarteocitron_groupservices:
+      type: boolean
+      label: 'groupServices'
+    tarteocitron_servicedefaultstate:
+      type: string
+      label: 'serviceDefaultState'
     tarteocitron_googleconsentmode:
       type: boolean
       label: 'googleConsentMode'
+    tarteocitron_bingconsentmode:
+      type: boolean
+      label: 'bingConsentMode'
+    tarteocitron_softconsentmode:
+      type: boolean
+      label: 'softConsentMode'
+    tarteocitron_datalayer:
+      type: boolean
+      label: 'dataLayer'
+    tarteocitron_serverside:
+      type: boolean
+      label: 'serverSide'
     tarteocitron_partnerslist:
       type: boolean
       label: 'partnersList'
+    tarteocitron_alwaysneedconsent:
+      type: boolean
+      label: 'alwaysNeedConsent'
+    tarteocitron_readmorelink:
+      type: text
+      label: 'readmoreLink'
     tarteocitron_customtext:
       type: text
       label: 'CustomText'
